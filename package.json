@@ -1,0 +1,20 @@
+{
+  "name": "nuxt-external-resource-loading-issue",
+  "version": "1.0.0",
+  "description": "Nuxt.js project",
+  "author": "Mark Plewis",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "cross-env": "^5.2.0",
+    "nuxt": "^2.4.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.9"
+  }
+}
