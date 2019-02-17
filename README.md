@@ -2,6 +2,10 @@
 
 > Nuxt.js project
 
+This project was created in order to demo the following bug: https://github.com/nuxt/nuxt.js/issues/3396 and https://github.com/nuxt/nuxt.js/issues/3872.
+
+This project was created using [create-nuxt-app](https://github.com/nuxt/create-nuxt-app).
+
 ## Build Setup
 
 ``` bash
