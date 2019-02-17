@@ -1,10 +1,11 @@
 <template>
   <div>
-    <h1>Home page</h1>
+    <h1>Home</h1>
     <p>This is the home page.</p>
     <ul>
-      <li>Home page</li>
-      <li><nuxt-link to="/test">Test page</nuxt-link></li>
+      <li>Home</li>
+      <li><nuxt-link to="/test-1">Test 1</nuxt-link></li>
+      <li><nuxt-link to="/test-2">Test 2</nuxt-link></li>
     </ul>
   </div>
 </template>
@@ -13,7 +14,7 @@
   export default {
     head() {
       return {
-        title: "Home page"
+        title: "Home"
       };
     }
   }
