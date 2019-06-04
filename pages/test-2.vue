@@ -12,17 +12,39 @@
 
 <script>
   export default {
-    head() {
-      return {
-        title: "Test 2",
-        script: [{
-          src: "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js"
-        }]
-      };
-    },
+    // head() {
+    //   return {
+    //     title: "Test 2",
+    //     script: [{
+    //       src: "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js"
+    //     }]
+    //   };
+    // },
+    // mounted() {
+    //   if (!process.server && window.jQuery) {
+    //     window.jQuery("h1").append(` <span class="cdn-loaded-message">(CDN script has loaded)</span>`);
+    //   }
+    // }
     mounted() {
-      if (!process.server && window.jQuery) {
-        window.jQuery("h1").append(` <span class="cdn-loaded-message">(CDN script has loaded)</span>`);
+      if (!window.jQuery) {
+        const script = document.createElement("script");
+        script.onload = this.onCDNScriptLoaded;
+        script.type = "text/javascript";
+        script.src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js";
+        document.head.appendChild(script);
+      } else {
+        this.onCDNScriptLoaded();
+      }
+    },
+    methods: {
+      onCDNScriptLoaded(event = null) {
+        if (event) {
+          console.log("PG2 - Was added");
+        } else {
+          console.log("PG2 - Already existed");
+        }
+        console.log(window.jQuery);
+        window.jQuery("h1").append(` <span>(CDN script has loaded)</span>`);
       }
     }
   }
